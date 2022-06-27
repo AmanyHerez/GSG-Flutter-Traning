@@ -1,6 +1,8 @@
+import 'package:first_gsg_app/sec_facebook_screen.dart';
 import 'package:flutter/material.dart';
 
 import 'MyFirstUi.dart';
+import 'facebook_screen.dart';
 import 'instagram_screen.dart';
 
 void main() {
@@ -14,7 +16,7 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-      home:InstagramScreen(),
+      home:FacebookUI(),
     );
   }
 }
