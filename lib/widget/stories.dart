@@ -1,24 +1,25 @@
 import 'package:flutter/material.dart';
 
+import '../User.dart';
+import '../post.dart';
+
 class Story extends StatelessWidget {
   @override
-  final String avaterImage;
-  final String storyImage;
-  final String userName;
+  User? user;
+  PostData? post;
 
   Story({
-    required this.avaterImage,
-    required this.storyImage,
-    required this.userName,
+    required this.user,
+    required this.post,
   });
-
   Widget build(BuildContext context) {
     return Container(
+      margin: EdgeInsets.only(right: 8),
       width: 120,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(12),
         image: DecorationImage(
-          image: AssetImage(storyImage),
+          image: NetworkImage(post!.image??' '),
           fit: BoxFit.cover,
         ),
       ),
@@ -31,13 +32,13 @@ class Story extends StatelessWidget {
               backgroundColor: Colors.white,
               radius: 22,
               child: CircleAvatar(
-                backgroundImage: AssetImage(avaterImage),
+                backgroundImage: NetworkImage(post!.image??' '),
                 radius: 20,
               ),
             ),
             Spacer(),
             Text(
-              userName,
+              user!.name??' ',
               style: TextStyle(
                 color: Colors.white,
               ),
